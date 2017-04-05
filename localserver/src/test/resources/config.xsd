@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.multiserass.com/schema/configuration"> 
+  <xs:element name="configuration">
+    <xs:complexType>  
+      <xs:sequence maxOccurs="1">
+        <xs:element type="xs:string" name="webapp"/>
+        <xs:element type="xs:string" name="servlet"/>
+        <xs:element type="xs:integer" name="port"/>
+        <xs:element name="properties" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="property">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="value"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="datasources" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="datasource" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="jndi"/>
+                    <xs:element type="xs:string" name="url"/>
+                    <xs:element type="xs:string" name="user"/>
+                    <xs:element type="xs:string" name="password"/>
+                    <xs:element type="xs:string" name="classname"/>
+                    <xs:element type="xs:string" name="validationQuery" minOccurs="0" />
+                    <xs:element type="xs:string" name="log" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
