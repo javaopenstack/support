@@ -42,8 +42,7 @@ public class LocalServer
 {
 	private static Logger log = LoggerFactory.getLogger( LocalServer.class );
 	 
-	private JndiInitializer jndiInitializer = new JndiInitializer();
-	
+	 	
 	private Configuration configuration = null;
 	
 	public LocalServer(){
@@ -87,7 +86,7 @@ public class LocalServer
 		}
 		
 		if ( configuration.getDatasources() != null && !configuration.getDatasources().getDatasource().isEmpty()){
-			jndiInitializer.init(configuration);
+			JndiInitializer.init(configuration);
 		}
 		try {
 			clazz = (Class<? extends ServletContainerInitializer>) Class.forName( configuration.getServlet() );

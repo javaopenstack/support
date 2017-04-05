@@ -22,6 +22,7 @@ public class JndiInitializer {
 
 	private static Logger log = LoggerFactory.getLogger(JndiInitializer.class);
 	
+	
 	public static void init(Configuration configuration){
 		
 		try {
