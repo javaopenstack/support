@@ -20,9 +20,9 @@ import net.sf.log4jdbc.sql.jdbcapi.DataSourceSpy;
 
 public class JndiInitializer {
 
-	private Logger log = LoggerFactory.getLogger(JndiInitializer.class);
+	private static Logger log = LoggerFactory.getLogger(JndiInitializer.class);
 	
-	public void init(Configuration configuration){
+	public static void init(Configuration configuration){
 		
 		try {
 			
@@ -83,7 +83,7 @@ public class JndiInitializer {
 		}
 	}
 	
-	private void splitJndi( TreeSet<String> items, String data )
+	private static void splitJndi( TreeSet<String> items, String data )
 	{
 		
 		StringBuilder sb = new StringBuilder();
